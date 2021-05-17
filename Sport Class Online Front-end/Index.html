@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <!--Nav-->
+        <div id="nav">
+            <div class="logo"><img width="200px" height="60px" src="/assets/img/logo.png" alt=""></div>
+            <ul class="nav">
+                <li class="nav_iteam"><a href="http://localhost:8080/book/?bookId=1&orderBy=book_id&order=DESC">Home</a></li>
+                <li class="nav_iteam"><a>Course</a></li>
+                <li class="nav_iteam"><a>Suport</a></li>
+                <li class="nav_iteam"><a>About Us</a></li>
+            </ul>
+            <div class="account_container">
+                <div class="account_sub_container">
+                    <div class="account_bth">
+                        <a>Login</a>
+                    </div>
+                    <div class="account_bth">
+                        <a>Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End nav-->
+    </header>
+
+    <!--Start section Banner-->
+    <div class="banner">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+        
+            <div class="soical-icons">
+                <a href="#"><i class="fa fa-facebook-square  fa-6"></i></a>
+                <a href="#"><i class="fa fa-google-plus-square fa-6"></i></a>
+                <a href="#"><i class="fa fa-twitter-square fa-6"></i></a>
+            </div>
+
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required />
+                <input type="text" class="input-field" placeholder="Enter Password" required />
+                <input type="checkbox" class="check-box" /><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required />
+                <input type="email" class="input-field" placeholder="Enter Email" required />
+                <input type="text" class="input-field" placeholder="Enter Password" required />
+                <input type="checkbox" class="check-box" /><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>  
+        <!--JS handle animation-->
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+    
+            function register() {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+    
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
+    
+        </script>      
+    </div>
+    <!--End section banner-->
+
+    <!--Section Couses-->
+    <div class="course">
+        <!--Container heading-->
+        <div class="heading_course">
+            <h2>The details of course</h2>
+        </div>
+        <!--Container course-->
+        <div class="course_row">
+                <div class="course_iteam">
+                    <img width="100%" height="55%"src="/assets/img/course img.jpg" alt="">
+                    <div class="course_iteam_detail">
+                        <h2>Name course</h2>
+                        <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                        <ul class="course_iteam_author">
+                            <li><img width="32px" height="32px" src="/assets/img/Coach.jpg"></li>
+                            <li><a>Register course</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="course_iteam">
+                    <img width="100%" height="55%" src="/assets/img/course img.jpg" alt="">
+                    <div class="course_iteam_detail">
+                        <h2>Name course</h2>
+                        <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                        <ul class="course_iteam_author">
+                            <li><img width="32px" height="32px" src="/assets/img/Coach.jpg"></li>
+                            <li><a>Register course</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="course_iteam">
+                    <img width="100%" height="55%" src="/assets/img/course img.jpg" alt="">
+                    <div class="course_iteam_detail">
+                        <h2>Name course</h2>
+                        <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                        <ul class="course_iteam_author">
+                            <li><img width="32px" height="32px" src="/assets/img/Coach.jpg"></li>
+                            <li><a>Register course</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+        </div>
+
+        <div class="course_row">
+            <div class="course_iteam">
+                <img width="100%" height="55%" src="/assets/img/course img.jpg" alt="">
+                <div class="course_iteam_detail">
+                    <h2>Name course</h2>
+                    <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                    <ul class="course_iteam_author">
+                        <li><img width="32px" height="32px" src="/assets/img/Coach.jpg"></li>
+                        <li><a>Register course</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="course_iteam">
+                <img width="100%" height="55%" src="/assets/img/course img.jpg" alt="">
+                <div class="course_iteam_detail">
+                    <h2>Name course</h2>
+                    <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                    <ul class="course_iteam_author">
+                        <li><img width="32px" height="32px" src="/assets/img/Coach.jpg"></li>
+                        <li><a>Register course</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="course_iteam">
+                <img width="100%" height="55%" src="/assets/img/course img.jpg" alt="">
+                <div class="course_iteam_detail">
+                    <h2>Name course</h2>
+                    <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                    <ul class="course_iteam_author">
+                        <li><img width="32px" height="32px" src="/assets/img/Coach.jpg"></li>
+                        <li><a>Register course</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    <!--End Section Couses-->
+    
+    <!--Section About us-->
+    <div class="container_about_us">
+        <div class="about_us_img">
+            <img src="/assets/img/profile_img.jpg" alt="">
+        </div>
+        <div class="about_us_intro">
+            <p>""...I work on weekends, holidays. Wherever I can, I can put my computer and I ALWAYS believe that I will make great products for SHARE with the community , that's the goal I've always pursued..."</p>
+        </div>
+    </div>
+    <!--End Section About us-->
+</body>
+</html>
