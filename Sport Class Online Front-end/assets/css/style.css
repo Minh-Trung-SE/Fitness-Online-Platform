@@ -334,4 +334,44 @@
     font-size: 45px;
 }
 
+.footer{
+    background-color: #151515;
+    padding: 100px 100px 150px 100px;
+    display: flex;
+    flex-direction: row;
+}
 
+.contact_infor{
+    flex-grow: 1;
+}
+
+.contact_iteam{
+    list-style: none;
+    margin: 12px 0;
+
+}
+
+.contact_iteam > a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.contact_iteam > a > i{
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #333;
+    display: inline-block;
+}
+
+
+.contact_infor .fa{
+    color: #eee;
+    font-size: 20px;
+    text-align: center;
+}
+
+.more_infor {
+    flex-grow: 1;
+}
