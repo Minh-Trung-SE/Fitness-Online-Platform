@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css-lib/css/fontawesome.css}"  rel= "stylesheet">
+    <link th:href="@{/css-lib/css/brands.css}" rel="stylesheet">
+    <link th:href="@{/css-lib/css/solid.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/study.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Mulish:wght@200;300;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="nav">
+            <div class="logo"><img width="200px" height="60px" th:src="@{/img/logo.png}" alt=""></div>
+            <ul class="nav">
+                <li class="nav_iteam"><a href="home.html">Home</a></li>
+                <li class="nav_iteam"><a>Suport</a></li>
+                <li class="nav_iteam"><a href="#AboutUS">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="play-lesson-wrapper">
+        <div class="video-wrapper">
+            <iframe id="video" width="972" height="547" src="https://www.youtube.com/embed/H6ZpiMd-dpE"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div ></div>
+        </div>
+        <div class="list-lesson-wrapper">
+            <ul class="list-lesson">
+                <li th:each="lesson: ${listLesson}">
+                    <div class="lesson-item">
+                        <h3 th:text="${lesson.lessonTitle}"></h3>
+                        <i th:if = "${lesson.isBought}" onclick="getLink(event)" th:attr = "data-link=${lesson.linkLesson}" class="fas fa-play-circle" ></i>
+                        <i th:unless = "${lesson.isBought}" onclick="lessonUnpaid()" th:attr = "data-link=${lesson.linkLesson}" class="fas fa-lock" ></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script>
+            function getLink(event){
+                var video = document.getElementById('video');
+                video.setAttribute("src", event.target.getAttribute('data-link'))
+            }
+            function lessonUnpaid(){
+                alert('This lesson unpaid!')
+            }
+        </script>
+    </div>
+    
+</body>
+</html>

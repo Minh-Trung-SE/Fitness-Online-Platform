@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link th:href="@{/css-lib/css/fontawesome.css}"  rel= "stylesheet">
+    <link th:href="@{/css-lib/css/brands.css}" rel="stylesheet">
+    <link th:href="@{/css-lib/css/solid.css}" rel="stylesheet">
+    <link th:href="@{/css/homePage.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Mulish:wght@200;300;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div id="nav" >
+            <a th:href="@{/home}" class="logo"><img width="200px" height="60px" th:src="@{/img/logo.png}" alt=""></a>
+            <ul th:object="${user}" class="nav">
+                <li class="nav_item"><a th:href="@{/studyHome} + '?userPhone=' + *{userPhone}">Studying</a></li>
+                <li class="nav_item"><a href="#Course">Course</a></li>
+                <li class="nav_item"><a >Suport</a></li>
+                <li class="nav_item"><i class="fas fa-user-circle"></i><span th:text = "*{userName}"></span></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="Course">
+        <div class="course">
+            <!--Container heading-->
+            <div class="heading_course">
+                <h1>The list course</h1>
+            </div>
+            <!--Container course-->
+            <div class="course_row">
+                <div class="course_item">
+                    <img width="100%" height="55%" th:src="@{img/course img.jpg}" alt="" src="">
+                    <div class="course_item_detail">
+                        <a href="buyCourse.html"><h2>Name course</h2></a>
+                        <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                        <ul class="course_item_author">
+                            <li><img width="32px" height="32px" th:src="@{/img/Coach.jpg}"></li>
+                            <li><a>Register course</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course_item">
+                    <img width="100%" height="55%" th:src="@{img/course img.jpg}" alt="">
+                    <div class="course_item_detail">
+                        <a href="buyCourse.html"><h2>Name course</h2></a>
+                        <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                        <ul class="course_item_author">
+                            <li><img width="32px" height="32px" th:src="@{/img/Coach.jpg}"></li>
+                            <li><a>Register course</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Section Couses-->
+    
+
+    <!--Contact infor-->
+    <div class="footer">
+        <ul class="contact_infor">
+            <li class="contact_item"><a href=""><i class="fa fa-phone"></i>  +84123456789</a></li>
+            <li class="contact_item"><a href=""><i class="fa fa-map-marker"></i>  9 District - HCM City</a></li>
+            <li class="contact_item"><a href=""><i class="fa fa-facebook"> </i>  www.facebook.com</a></li>
+        </ul>
+        <div class="more_infor">
+            <h2>About Me</h2>
+            <p>OK ghgfgn</p>
+        </div>
+    </div>
+    
+</body>
+</html>
