@@ -19,8 +19,8 @@ public class CourseServices {
     }
 
     public void registerCourse(String userPhone, int courseId){
-        RegisterLesson registerLesson = lessonRepository.findFirstByUserPhoneAndIdCourseRegister(userPhone, courseId);
-        if(registerLesson == null){
+        ArrayList<RegisterLesson> registerLesson = lessonRepository.findAllByUserPhoneAndIdCourseRegister(userPhone, courseId);
+        if(registerLesson.size() == 0){
             ArrayList<Course> listLesson = courseRepository.getAllByCourseId(courseId);
             ArrayList<RegisterLesson> listLessonRegister = new ArrayList<RegisterLesson>();
             for (Course course : listLesson) {
@@ -31,9 +31,15 @@ public class CourseServices {
                 register.setIsBought(1);
                 lessonRepository.save(register);
             }
+        }else {
+            for(RegisterLesson register: registerLesson){
+                register.setIsBought(1);
+                lessonRepository.save(register);
+            }
         }
-    }
 
+
+    }
 
     public void registerCourseByLesson(String userPhone, int courseId, int lessonId){
         RegisterLesson registerLessonExist = lessonRepository.findFirstByUserPhoneAndIdCourseRegister(userPhone, courseId);

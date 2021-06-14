@@ -45,8 +45,14 @@ body{
 .nav .profile > p{
     font-size: 20px;
     margin: auto;
-    padding: 0px 20px;
+    padding: 0 20px;
     color: rgb(0, 0, 0);
+}
+
+.nav .fa-user-circle{
+    color: rgb(255, 0, 0);
+    font-size: 40px;
+    padding-right: 4px;
 }
 
 
@@ -54,6 +60,7 @@ body{
     display: flex;
     color:rgb(0, 0, 0);
     padding: 0 20px;
+    align-items: center;
 }
 
 .nav .profile .avatar{
@@ -264,7 +271,7 @@ body{
     position: absolute;
     top: 50%;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 
 .sub_container_wrapper h1{
@@ -272,7 +279,7 @@ body{
 }
 
 .first-row{
-     display: flex;
+    display: flex;
 }
 
 .owner{
@@ -291,14 +298,14 @@ body{
     border:none;
     outline: none;
     padding: 10px;
-    
+
 }
 
 .selection{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .selection select{

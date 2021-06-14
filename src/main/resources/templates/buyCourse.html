@@ -15,10 +15,10 @@
     <div id="nav">
         <nav class="nav">
             <a href="Index.html" class="logo"><img height="60px" src="/assets/img/logo.png" alt=""></a>
-            <a href="study.html">My Course</a>
-            <div class="profile">
-                <p id="userPhone" data-phone="0335840115">Minh Trung</p>
-                <img class="avatar" src="/assets/img/avata.jpg" alt="">
+            <a th:object="${userPhone}" th:href="@{/studyHome} + '?userPhone=' + ${userPhone}">My Course</a>
+            <div class="profile" th:object="${userPhone}" id="userPhone" th:attr="data-phone=${userPhone}">
+                <i class="fas fa-user-circle"></i>
+                <p th:object="${userName}" th:text="${userName}"></p>
             </div>
         </nav>
     </div>
@@ -52,17 +52,17 @@
                     <p class="p-buy-combo">1.000.000.000VND</p>
                     <div class="button_buy_combo p-buy-combo"> 
                         <i class="fas fa-shopping-cart"></i>
-                        <button onclick="controlPayment()" href=""></i> Buy now!</button> 
+                        <button onclick="buyCourse()"> Buy now!</button>
                     </div>
                 </div>
                 <div class="buy-unit-lesson-wrapper">
                     <h3>Buy lesson by unit</h3>
-                    <ul class="list-course-lesson">
+                    <ul class="list-course-lesson" th:object="${courseId}" th:attr="data-courseId=${courseId}">
                         <li th:each="lesson: ${listLessons}">
                             <div class="lesson-item-wrapper">
                                 <h4 th:text="${lesson.lessonId}">Lesson </h4>
                                 <div class="buy-lesson-by-unit">
-                                    <p>300.000VND <span onclick="controlPayment()">Buy</span></p>
+                                    <p>300.000VND <span onclick="buyCourseByUnit()"  th:attr="data-lessonId=${lesson.lessonId}">Buy</span></p>
                                 </div>
                             </div>
                         </li>                
@@ -71,6 +71,7 @@
                 </div>
             </div>
         </div>
+
         <div id="payment" class="payment_wrapper">
             <div class="sub_container_wrapper">
                 <h1>Confirm Your Payment</h1>
@@ -113,22 +114,22 @@
                                 <option value="Oct">Oct</option>
                                 <option value="Nov">Nov</option>
                                 <option value="Dec">Dec</option>
-                              </select>
-                              <select name="years" id="years">
+                            </select>
+                            <select name="years" id="years">
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
                                 <option value="2018">2018</option>
                                 <option value="2017">2017</option>
                                 <option value="2016">2016</option>
                                 <option value="2015">2015</option>
-                              </select>
+                            </select>
                         </div>
                         <div class="cards">
-                            <img th:src="@{/img/payment/mc.png}" alt="">
-                            <img th:src="@{/img/payment/vi.png}" alt="">
-                            <img th:src="@{/img/payment/pp.png}"alt="">
+                            <img src="./assets/img/mc.png" alt="">
+                            <img src="./assets/img/vi.png" alt="">
+                            <img src="./assets/img/pp.png" alt="">
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <button onclick="controlPayment()">Confirm</button>
             </div>
@@ -136,16 +137,33 @@
     </div>
 
     <script>
-        function buyCourse(event){
-            var element 
-        }
         function controlPayment(){
             var payment = document.getElementById('payment');
             if(payment.style.display === 'unset'){
                 payment.style.display = 'none';
+                alert("Payment success!")
             }else{
                 payment.style.display = 'unset';
             }
+        }
+        function buyCourseByUnit(){
+            const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
+            const lessonId = event.target.getAttribute('data-lessonid');
+            const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
+            const url ="http://localhost:8080/registerByUnit?userPhone=" + userPhone + "&courseId=" + courseId + "&lessonId=" + lessonId;
+            const http = new XMLHttpRequest();
+            http.open("GET", url);
+            http.send();
+            controlPayment()
+        }
+        function buyCourse(){
+            const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
+            const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
+            const url = "http://localhost:8080/register?userPhone=" + userPhone + "&courseId=" + courseId;
+            const http = new XMLHttpRequest();
+            http.open("GET", url);
+            http.send();
+            controlPayment()
         }
     </script>
 </body>

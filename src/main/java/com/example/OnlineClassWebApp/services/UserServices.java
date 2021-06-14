@@ -32,4 +32,10 @@ public class UserServices {
         userRepository.save(user);
         return true;
     }
+
+    public String getUserName(String userPhone){
+        User user = userRepository.findByUserPhone(userPhone);
+        return user.getUserName();
+    }
+
 }
