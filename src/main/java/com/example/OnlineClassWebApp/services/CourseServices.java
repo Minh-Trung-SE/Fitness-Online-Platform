@@ -65,6 +65,9 @@ public class CourseServices {
     public ArrayList<ResponseCourse> studyCourse(String userPhone, int courseId){
         ArrayList<Course> listCourseLesson = courseRepository.getAllByCourseId(courseId);
         ArrayList<RegisterLesson> listLessonActive = lessonRepository.findAllByUserPhoneAndIdCourseRegister(userPhone, courseId);
+        if(listLessonActive.size() == 0){
+            return null;
+        }
         ArrayList<ResponseCourse> listLesson = new ArrayList<ResponseCourse>();
         for(int i = 0; i < listCourseLesson.size(); i++){
             ResponseCourse responseCourse = new ResponseCourse();

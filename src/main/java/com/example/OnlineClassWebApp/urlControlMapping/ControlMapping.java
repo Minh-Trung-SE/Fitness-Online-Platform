@@ -70,6 +70,9 @@ public class ControlMapping {
     public String learnCourse(Model model, @RequestParam String userPhone){
         ArrayList<ResponseCourse> listLesson = new ArrayList<ResponseCourse>();
         listLesson = courseServices.studyCourse(userPhone, 1);
+        if (listLesson == null){
+            return "redirect:/home";
+        }
         model.addAttribute("listLesson", listLesson);
         return "study";
     }
