@@ -75,4 +75,9 @@ public class CourseServices {
 //        }
         return listLesson;
     }
+
+    public ArrayList<Course> getListLessonByCourseId(int courseId){
+        return courseRepository.getAllByCourseId(courseId);
+    }
+
 }

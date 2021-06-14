@@ -1,5 +1,6 @@
 package com.example.OnlineClassWebApp.urlControlMapping;
 
+import com.example.OnlineClassWebApp.entity.Course;
 import com.example.OnlineClassWebApp.entity.User;
 import com.example.OnlineClassWebApp.responseEntity.ResponseCourse;
 import com.example.OnlineClassWebApp.services.CourseServices;
@@ -32,9 +33,9 @@ public class CourseControlMapping {
 
     @GetMapping(value = "/registerByUnit")
     @ResponseBody
-    public String registerCourseByLesson(@RequestParam String userPhone, @RequestParam int courseId, @RequestParam int lessonId){
+    public void registerCourseByLesson(@RequestParam String userPhone, @RequestParam int courseId, @RequestParam int lessonId){
         courseServices.registerCourseByLesson(userPhone, courseId, lessonId);
-        return "ok";
+        System.out.println("OK");
     }
 
     @GetMapping(value = "/studyHome")
@@ -45,4 +46,12 @@ public class CourseControlMapping {
         return "study";
     }
 
+    @GetMapping(value = "/course")
+    public String showPageBuyCourse(Model model, @RequestParam String userPhone, @RequestParam int courseId){
+        ArrayList<Course> listLessons = courseServices.getListLessonByCourseId(courseId);
+        model.addAttribute("userPhone", userPhone);
+        model.addAttribute("courseId", courseId);
+        model.addAttribute("listLessons", listLessons);
+        return "buyCourse";
+    }
 }

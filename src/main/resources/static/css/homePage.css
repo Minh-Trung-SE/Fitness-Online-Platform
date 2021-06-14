@@ -91,7 +91,7 @@ body{
 
 .heading_course > h1{
     font-size: 40px;
-    margin: 100px 0px 50px 0;
+    margin: 100px 0 50px 0;
     text-align: center;
 }
     /*Css courser row*/
@@ -152,7 +152,7 @@ body{
 .course_item_author > li > img{
     border-radius: 50%;
 }
-.course_item_author > li > a{
+.buttom-register-course{
     min-width: 75px;
     min-height: 30px;
     padding: 0 8px;
@@ -164,15 +164,23 @@ body{
     border-radius: 30px;
     position: relative;
     transition: all 0.3s ease-in-out;
+    border: none;
 }
+
+.buttom-register-course:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
 .course_item_author > li{
     cursor: pointer;
     list-style: none;
 }
 
-.course_item_author > li:hover a{
-    transform: translateY(-8px);
-}
+
+/*.course_item_author > li:hover button{*/
+/*    transform: translateY(-8px);*/
+/*}*/
 
 
 
