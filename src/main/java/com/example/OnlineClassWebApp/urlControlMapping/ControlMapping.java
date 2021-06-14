@@ -40,7 +40,7 @@ public class ControlMapping {
     @PostMapping(value = "/register")
     public String userRegister(Model model, @ModelAttribute("user") User user){
         if(userServices.userRegister(user)){
-            System.out.println(user.getUserPhone());
+//            System.out.println(user.getUserPhone());
             model.addAttribute("user", user);
             return "homePage";
         }
@@ -56,7 +56,7 @@ public class ControlMapping {
     @GetMapping(value = "/register")
     @ResponseBody
     public void registerFullCourse(@RequestParam String userPhone, @RequestParam int courseId){
-        System.out.println(userPhone + " : " + courseId);
+//        System.out.println(userPhone + " : " + courseId);
         courseServices.registerCourse(userPhone, courseId);
     }
 
@@ -81,7 +81,6 @@ public class ControlMapping {
         model.addAttribute("userPhone", userPhone);
         model.addAttribute("courseId", courseId);
         model.addAttribute("listLessons", listLessons);
-        System.out.println(userPhone + ": " + courseId);
         return "buyCourse";
     }
 }

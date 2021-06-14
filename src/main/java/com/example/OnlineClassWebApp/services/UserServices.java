@@ -15,17 +15,16 @@ public class UserServices {
     public boolean userLogin(User user){
         User userLogin = userRepository.findByUserPhone(user.getUserPhone());
         if(userLogin == null){
-            System.out.println("Not exist!");
+//            System.out.println("Not exist!");
             return false;
         }
         user.setUserName(userLogin.getUserName());
-        System.out.println(user.getUserName());
+//        System.out.println(user.getUserName());
         return userLogin.getUserPassword().equals(user.getUserPassword());
     }
 
     public boolean userRegister(User user){
-        User userExist = new User();
-        userExist = userRepository.findByUserPhoneAndUserEmail(user.getUserPhone(), user.getUserEmail());
+        User userExist = userRepository.findByUserPhoneAndUserEmail(user.getUserPhone(), user.getUserEmail());
         if( userExist != null){
             return false;
         }

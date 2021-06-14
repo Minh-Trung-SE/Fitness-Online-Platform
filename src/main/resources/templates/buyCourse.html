@@ -14,7 +14,7 @@
 <body>
     <div id="nav">
         <nav class="nav">
-            <a href="Index.html" class="logo"><img height="60px" src="/assets/img/logo.png" alt=""></a>
+            <a th:href="@{/home}" class="logo"><img height="60px" th:src="@{/img/logo.png}" alt=""></a>
             <a th:object="${userPhone}" th:href="@{/studyHome} + '?userPhone=' + ${userPhone}">My Course</a>
             <div class="profile" th:object="${userPhone}" id="userPhone" th:attr="data-phone=${userPhone}">
                 <i class="fas fa-user-circle"></i>
@@ -125,9 +125,9 @@
                             </select>
                         </div>
                         <div class="cards">
-                            <img src="./assets/img/mc.png" alt="">
-                            <img src="./assets/img/vi.png" alt="">
-                            <img src="./assets/img/pp.png" alt="">
+                            <img th:src="@{img/payment/mc.png}" alt="">
+                            <img th:src="@{img/payment/vi.png}" alt="">
+                            <img th:src="@{img/payment/pp.png}" alt="">
                         </div>
                     </div>
                 </div>
