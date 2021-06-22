@@ -165,6 +165,7 @@ body{
     position: relative;
     transition: all 0.3s ease-in-out;
     border: none;
+    text-decoration: none;
 }
 
 .buttom-register-course:hover {
@@ -181,56 +182,3 @@ body{
 /*.course_item_author > li:hover button{*/
 /*    transform: translateY(-8px);*/
 /*}*/
-
-
-
-
-/***************/
-
-.footer{
-    background-color: #151515;
-    padding: 100px 70px;
-    display: flex;
-    flex-direction: row;
-}
-
-.contact_infor{
-    flex-grow: 1;
-}
-
-.contact_item{
-    list-style: none;
-    margin: 12px 0;
-
-}
-
-.contact_item > a{
-    text-align: center;
-    text-decoration: none;
-    color: #FFF;
-}
-
-.contact_item > a > i{
-    width: 36px;
-    height: 36px;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: #333;
-    display: inline-block;
-}
-
-
-.contact_infor .fa{
-    color: #eee;
-    font-size: 20px;
-    text-align: center;
-}
-
-.more_infor {
-    flex-grow: 1;
-}
-.more_infor > h2{
-    color: #eee;
-    /* text-align: center; */
-    margin-bottom: 8px;
-}

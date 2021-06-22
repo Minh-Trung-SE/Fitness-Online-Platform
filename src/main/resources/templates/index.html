@@ -176,8 +176,8 @@
                 <div class="course_item">
                     <img width="100%" height="55%" th:src="@{img/course img.jpg}" alt="">
                     <div class="course_item_detail">
-                        <a href="buyCourse.html"><h2>Name course</h2></a>
-                        <p>Khóa học đề cao việc thực hành qua những ví dụ trong thực tế giúp học viên nhanh chóng xây dựng được giao diện website</p>
+                        <a><h2>Gym course for beginners</h2></a>
+                        <p>We happy to see you being here that mean you want to train your body however not all of you know to do it correcly. Thus, we introduce you to this course , it will help you how to do it easily and correctly.</p>
                         <ul class="course_item_author">
                             <li><img width="32px" height="32px" th:src="@{/img/Coach.jpg}"></li>
                             <li><a>Register course</a></li>
@@ -188,7 +188,32 @@
         </div>
     </section>
     <!--End Section Couses-->
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
 
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "103437298643489");
+        chatbox.setAttribute("attribution", "biz_inbox");
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml            : true,
+                version          : 'v11.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <section id="Community">
         <div class="community_wrapper">
             <a href="https://www.facebook.com/groups/390581978945496" target="_blank"><i class="fas fa-users"></i></a>
@@ -197,16 +222,19 @@
     </section>
 
     <!--Contact infor-->
-    <div class="footer">
-        <ul class="contact_infor">
-            <li class="contact_item"><a href=""><i class="fa fa-phone"></i>  +84123456789</a></li>
-            <li class="contact_item"><a href=""><i class="fa fa-map-marker"></i>  9 District - HCM City</a></li>
-            <li class="contact_item"><a href=""><i class="fa fa-facebook"> </i>  www.facebook.com</a></li>
-        </ul>
-        <div class="more_infor">
-            <h2>About Me</h2>
-            <p>OK ghgfgn</p>
+    <div class="footer-wrapper">
+        <div class="footer">
+            <ul class="contact_infor">
+                <li class="contact_iteam"><i class="fas fa-phone-alt"></i>  +84123456789</li>
+                <li class="contact_iteam"><i class="fas fa-map-marked-alt"></i>  9 District - HCM City</li>
+                <li class="contact_iteam"><i class="fab fa-facebook"></i> www.facebook.com</li>
+            </ul>
+            <div class="more_infor">
+                <h2>About Us</h2>
+                <p>With many years in the field of fitness training, competition, climbing and extreme sports, I want to share the knowledge and experience that I have gained with everyone through these courses. Hope these will help everyone in life.</p>
+            </div>
         </div>
+        <h3>© 2021 Team 3 SE1516</h3>
     </div>
 </body>
 </html>

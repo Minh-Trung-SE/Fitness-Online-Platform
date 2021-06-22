@@ -30,7 +30,7 @@
                         <img width="780px" th:src="@{/img/gym_trainer1.jpg}" alt="">
                     </div>
                     <div class="description-course-text">
-                        <h2>Beginer course</h2>
+                        <h2>Gym course for beginners</h2>
                         <p>We happy to see you being here that mean you want to
                             train your body however not all of you know to do it correcly. Thus, we introduce you to this course
                             , it will help you how to do it easily and correctly.</p>
@@ -150,7 +150,7 @@
             const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
             const lessonId = event.target.getAttribute('data-lessonid');
             const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
-            const url ="http://localhost:8080/registerByUnit?userPhone=" + userPhone + "&courseId=" + courseId + "&lessonId=" + lessonId;
+            const url ="https://minhtrung.zclouds.vn/registerByUnit?userPhone=" + userPhone + "&courseId=" + courseId + "&lessonId=" + lessonId;
             const http = new XMLHttpRequest();
             http.open("GET", url);
             http.send();
@@ -159,7 +159,7 @@
         function buyCourse(){
             const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
             const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
-            const url = "http://localhost:8080/register?userPhone=" + userPhone + "&courseId=" + courseId;
+            const url = "https://minhtrung.zclouds.vn/register?userPhone=" + userPhone + "&courseId=" + courseId;
             const http = new XMLHttpRequest();
             http.open("GET", url);
             http.send();

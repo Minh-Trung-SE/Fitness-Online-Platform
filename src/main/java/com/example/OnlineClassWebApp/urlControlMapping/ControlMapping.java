@@ -21,7 +21,7 @@ public class ControlMapping {
         this.courseServices = courseServices;
     }
 
-    @GetMapping(value = "/home")
+    @GetMapping(value = {"/home", "/"})
     public String showHome(Model model){
         User user = new User();
         model.addAttribute("user", user);
@@ -56,7 +56,7 @@ public class ControlMapping {
     @GetMapping(value = "/register")
     @ResponseBody
     public void registerFullCourse(@RequestParam String userPhone, @RequestParam int courseId){
-//        System.out.println(userPhone + " : " + courseId);
+        System.out.println(userPhone + " : " + courseId);
         courseServices.registerCourse(userPhone, courseId);
     }
 

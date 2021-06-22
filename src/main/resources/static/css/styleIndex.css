@@ -455,7 +455,7 @@ body{
 
 .community_wrapper{
     background-color: #fd8e5f69;
-    height: 500px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -468,10 +468,15 @@ body{
 }
 
 /***************/
+.footer-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #151515;
+}
 
 .footer{
-    background-color: #151515;
-    padding: 100px 70px;
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -480,39 +485,37 @@ body{
     flex-grow: 1;
 }
 
-.contact_item{
+.contact_iteam{
     list-style: none;
     margin: 12px 0;
-
-}
-
-.contact_item > a{
-    text-align: center;
-    text-decoration: none;
-    color: #FFF;
-}
-
-.contact_item > a > i{
-    width: 36px;
-    height: 36px;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: #333;
-    display: inline-block;
-}
-
-
-.contact_infor .fa{
-    color: #eee;
+    color: #ffffff;
     font-size: 20px;
-    text-align: center;
+}
+.fa-phone-alt{
+    color: #4f23f0;
+    font-size: 24px;
 }
 
+.fa-map-marked-alt{
+    color: #2331f0;
+    font-size: 24px;
+}
+
+.footer-wrapper .fa-facebook{
+    color: #2331f0;
+    font-size: 24px;
+}
 .more_infor {
     flex-grow: 1;
+    max-width: 700px;
+    color: #eee;
 }
 .more_infor > h2{
-    color: #eee;
-    /* text-align: center; */
     margin-bottom: 8px;
 }
+
+.footer-wrapper h3{
+    color: #eee;
+    margin-top: 40px;
+}
+
