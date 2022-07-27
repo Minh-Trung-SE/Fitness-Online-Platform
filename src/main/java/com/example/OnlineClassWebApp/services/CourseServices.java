@@ -37,8 +37,6 @@ public class CourseServices {
                 lessonRepository.save(register);
             }
         }
-
-
     }
 
     public void registerCourseByLesson(String userPhone, int courseId, int lessonId){
@@ -56,9 +54,7 @@ public class CourseServices {
             }
         }
         RegisterLesson registerLesson = lessonRepository.findFirstByUserPhoneAndIdCourseRegisterAndIdLessonRegister(userPhone, courseId, lessonId);
-        System.out.println(registerLesson.toString());
         registerLesson.setIsBought(1);
-        System.out.println(registerLesson.toString());
         lessonRepository.save(registerLesson);
     }
 
@@ -79,9 +75,6 @@ public class CourseServices {
             }
             listLesson.add(responseCourse);
         }
-//        for(ResponseCourse course: listLesson){
-//            System.out.println(course.toString());
-//        }
         return listLesson;
     }
 

@@ -15,11 +15,9 @@ public class UserServices {
     public boolean userLogin(User user){
         User userLogin = userRepository.findByUserPhone(user.getUserPhone());
         if(userLogin == null){
-//            System.out.println("Not exist!");
             return false;
         }
         user.setUserName(userLogin.getUserName());
-//        System.out.println(user.getUserName());
         return userLogin.getUserPassword().equals(user.getUserPassword());
     }
 

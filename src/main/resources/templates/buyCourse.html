@@ -150,7 +150,7 @@
             const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
             const lessonId = event.target.getAttribute('data-lessonid');
             const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
-            const url ="https://minhtrung.zclouds.vn/registerByUnit?userPhone=" + userPhone + "&courseId=" + courseId + "&lessonId=" + lessonId;
+            const url =`${window.location.origin}/registerByUnit?userPhone=${userPhone}&courseId=${courseId}&lessonId=${lessonId}`;
             const http = new XMLHttpRequest();
             http.open("GET", url);
             http.send();
@@ -159,7 +159,7 @@
         function buyCourse(){
             const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
             const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
-            const url = "https://minhtrung.zclouds.vn/register?userPhone=" + userPhone + "&courseId=" + courseId;
+            const url = `${window.location.origin}/register?userPhone=${userPhone}&courseId=${courseId}`;
             const http = new XMLHttpRequest();
             http.open("GET", url);
             http.send();

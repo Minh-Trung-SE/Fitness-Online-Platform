@@ -40,7 +40,6 @@ public class ControlMapping {
     @PostMapping(value = "/register")
     public String userRegister(Model model, @ModelAttribute("user") User user){
         if(userServices.userRegister(user)){
-//            System.out.println(user.getUserPhone());
             model.addAttribute("user", user);
             return "homePage";
         }
