@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Mulish', sans-serif;
+}
+
+/*Start css navigation*/
+#nav {
+    height: 80px;
+    background-color: #FFFFFF;
+    display: flex;
+    padding: 0 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 2px #e4ca76da;
+}
+    /*Css for logo*/
+.logo {
+    min-width: 200px;
+    margin: auto;
+}
+    /*Css for navbar*/
+.nav {
+    flex-grow: 4;
+    display: flex;
+    color: black;
+    justify-content: space-around;
+}
+    /*Remove style list default*/
+.nav > li{
+    justify-content: center;
+    list-style: none;
+}
+
+.nav > li > a{
+    text-decoration: none;
+}
+    /*Css for nav iteams*/
+.nav_iteam {
+    margin: auto;
+    font-weight: 800;
+    min-width: 70px;
+    display: inline-block;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: rgb(2, 0, 0);
+}
+    /*Css animation hover nav bar*/
+.nav_iteam :hover{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+    /*Css account buttom*/
+.account_bth{
+    min-width: 100px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(236, 224, 208);
+    padding: 5px;
+    border-radius: 5px;
+}
+    /*Css animation hover account buttom*/
+.account_bth :hover{
+    cursor: pointer;
+}
+/*********/
+
+.play-lesson-wrapper{
+    margin-top: 80px;
+    padding: 60px;
+    display: flex;
+    background-color: rgb(2, 8, 39);
+}
+
+.video-wrapper{
+    align-items: center;
+}
+
+.video-wrapper iframe{
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.list-lesson-wrapper{
+    padding-left: 12px; 
+    flex-grow: 1;
+    
+}
+
+.list-lesson{
+    list-style: none; 
+    background-color: rgba(199, 182, 182, 0.8);
+    border-radius: 12px;
+    padding: 8px;
+    min-height: 547px;
+}
+
+.lesson-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.list-lesson li + li{
+    margin-top: 16px;
+}
+
+.lesson-item >i:hover{
+    cursor: pointer;
+}
+
+.fa-play-circle{
+    color: rgb(233, 5, 5);
+    font-size: 30px;
+}
+
+.fa-lock{
+    font-size: 30px;
+    cursor: pointer;
+    color: #4d4c4cd9;
+}

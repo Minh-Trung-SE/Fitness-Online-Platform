@@ -1,0 +1,346 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    font-family: 'Mulish', sans-serif;
+}
+
+/*Start css navigation*/
+#nav {
+    height: 80px;
+    background-color: #FFFFFF;
+    display: flex;
+    padding: 0 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 2px 2px 2px #e4ca76da;
+}
+    /*Css for logo*/
+.logo {
+    margin: 10px 0;
+    min-width: 200px;
+}
+    /*Css for navbar*/
+.nav {
+    flex-grow: 4;
+    display: flex;
+    justify-content: space-around;
+}
+    /*Remove style list default*/
+
+
+.nav a:nth-child(2){
+    margin: auto;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.nav .profile > p{
+    font-size: 20px;
+    margin: auto;
+    padding: 0 20px;
+    color: rgb(0, 0, 0);
+}
+
+.nav .fa-user-circle{
+    color: rgb(255, 0, 0);
+    font-size: 40px;
+    padding-right: 4px;
+}
+
+
+.nav .profile{
+    display: flex;
+    color:rgb(0, 0, 0);
+    padding: 0 20px;
+    align-items: center;
+}
+
+.nav .profile .avatar{
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+/**********/
+.container-wrapper{
+    position: absolute;
+}
+/*CSS buy course page*/
+
+.detail-course-wrapper{
+    margin-top: 60px;
+    display: flex;
+    padding: 50px 100px;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.description-course-wrapper{
+    flex-grow: 1;
+}
+
+.list-course-lesson-wrapper{
+    max-width: 300px;
+}
+
+.list-course-lesson-wrapper h3{
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.description-course{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.description-course-image{
+    margin: auto;
+    border-radius: 16px;
+    box-shadow: 2px 2px 2px #092563;
+    overflow: hidden;
+}
+
+.description-course-text{
+    padding: 20px 90px 0 80px;
+}
+ 
+/********/
+.course-info{
+    display: flex;
+    padding: 32px 27px;
+    min-width: 280px;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 5px 6px #3535362e;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 30px;
+}
+.course-info > h2{
+    text-align: center;
+}
+.course-info p{
+    font-weight: 600;
+    padding: 4px 0;
+}
+
+.course-info i{
+    margin-right: 6px;
+}
+
+.fa-calendar-plus{
+    font-size: 16px;
+    color: #29c00b;
+}
+
+.fa-check{
+    font-size: 16px;
+    color: #29c00b;
+}
+
+.fa-clock{
+    font-size: 16px;
+    color: #29c00b;
+}
+
+.fa-user{
+    font-size: 16px;
+    color: #29c00b;
+}
+
+.fa-shopping-cart{
+    font-size: 30px;
+    color: #29c00b;
+}
+
+
+/*****/
+.buy-combo{
+    padding: 32px 27px;
+    flex-direction: column;
+    box-shadow: 0 5px 6px #3535362e;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.p-buy-combo{
+    margin: 0 0 4px 0;
+}
+
+.buy-combo >i{
+    color: red;
+    font-size: 20px;
+    padding-right: 16px;
+}
+.button_buy_combo{
+    display: flex;
+    justify-content: center;
+}
+
+.buy-combo button{
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 4px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.buy-combo button:hover{
+    cursor: pointer;
+    color: #0004ff;
+}
+.buy-unit-lesson-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 5px 6px #3535362e;
+    border-radius: 8px;
+}
+
+.list-course-lesson{
+    list-style: none;
+}
+
+.lesson-item-wrapper{
+    background-color: #c6d1bf;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    min-width: 260px;
+    padding: 8px;
+    border: none;
+    margin: 6px 0;
+    border-radius: 4px;
+}
+.buy-lesson-by-unit p{
+    color: #ff0000;
+    font-weight: 800;
+}
+
+.buy-lesson-by-unit span{
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 16px;
+    color: #012c8a;
+    
+}
+
+.buy-lesson-by-unit span:hover{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #0004ff;
+    border-radius: 2px;
+}
+
+/***Payment*/
+.payment_wrapper{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #000000b7;
+    top: 0;
+    display: none;
+}
+.sub_container_wrapper{
+    width: 750px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    box-shadow: 0 0 4px 0 #888888;
+    border-radius: 8px;
+    border: none;
+    flex-direction: column;
+    padding: 40px;
+    justify-content:space-around;
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+}
+
+.sub_container_wrapper h1{
+    text-align: center;
+}
+
+.first-row{
+    display: flex;
+}
+
+.owner{
+    width: 100%;
+    margin-right: 40px;
+}
+
+.input-field{
+    box-shadow: 0 0 4px 0 #888888;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.input-field input{
+    width: 100%;
+    border:none;
+    outline: none;
+    padding: 10px;
+
+}
+
+.selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.selection select{
+    padding: 10px 20px;
+}
+
+#months{
+    box-shadow: 0 0 4px 0 #888888;
+    border-radius: 5px;
+    overflow: hidden;
+    border: none;
+}
+#years{
+    box-shadow: 0 0 4px 0 #888888;
+    border-radius: 5px;
+    overflow: hidden;
+    border: none;
+}
+
+.sub_container_wrapper button{
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.sub_container_wrapper button:hover{
+    background-color: rgb(1, 163, 28);
+}
+
+.cards img{
+    width: 100px;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/buyCourse.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Mulish:wght@200;300;600&display=swap" rel="stylesheet">
+    <link th:href="@{/css-lib/css/fontawesome.css}"  rel= "stylesheet">
+    <link th:href="@{/css-lib/css/brands.css}" rel="stylesheet">
+    <link th:href="@{/css-lib/css/solid.css}" rel="stylesheet">
+    <title>Course</title>
+</head>
+<body>
+    <div id="nav">
+        <nav class="nav">
+            <a th:href="@{/home}" class="logo"><img height="60px" th:src="@{/img/logo.png}" alt=""></a>
+            <a th:object="${userPhone}" th:href="@{/studyHome} + '?userPhone=' + ${userPhone}">My Course</a>
+            <div class="profile" th:object="${userPhone}" id="userPhone" th:attr="data-phone=${userPhone}">
+                <i class="fas fa-user-circle"></i>
+                <p th:object="${userName}" th:text="${userName}"></p>
+            </div>
+        </nav>
+    </div>
+    <div class="container-wrapper">
+        <div class="detail-course-wrapper">
+            <div class="description-course-wrapper">
+                <div class="description-course">
+                    <div class="description-course-image">
+                        <img width="780px" th:src="@{/img/gym_trainer1.jpg}" alt="">
+                    </div>
+                    <div class="description-course-text">
+                        <h2>Gym course for beginners</h2>
+                        <p>We happy to see you being here that mean you want to
+                            train your body however not all of you know to do it correcly. Thus, we introduce you to this course
+                            , it will help you how to do it easily and correctly.</p>
+                        <p>Thank you for reading. please enjoy the lesson!</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="list-course-lesson-wrapper">
+                <div class="course-info">
+                    <h2>About course</h2>
+                    <p><i class="fas fa-calendar-plus"></i>  July 18, 2021</p>
+                    <p><i class="fas fa-check"></i>  Every day</p>
+                    <p><i class="fas fa-clock"></i>  20h</p>
+                    <p><i class="fas fa-user"></i>  Bùi Văn Ngợi</p>
+                </div>
+                <div class="buy-combo">
+                    <h2 class="p-buy-combo" >Buy combo</h2>
+                    <p class="p-buy-combo">1.000.000.000VND</p>
+                    <div class="button_buy_combo p-buy-combo"> 
+                        <i class="fas fa-shopping-cart"></i>
+                        <button onclick="buyCourse()"> Buy now!</button>
+                    </div>
+                </div>
+                <div class="buy-unit-lesson-wrapper">
+                    <h3>Buy lesson by unit</h3>
+                    <ul class="list-course-lesson" th:object="${courseId}" th:attr="data-courseId=${courseId}">
+                        <li th:each="lesson: ${listLessons}">
+                            <div class="lesson-item-wrapper">
+                                <h4 th:text="${lesson.lessonId}">Lesson </h4>
+                                <div class="buy-lesson-by-unit">
+                                    <p>300.000VND <span onclick="buyCourseByUnit()"  th:attr="data-lessonId=${lesson.lessonId}">Buy</span></p>
+                                </div>
+                            </div>
+                        </li>                
+                    </ul>
+    
+                </div>
+            </div>
+        </div>
+
+        <div id="payment" class="payment_wrapper">
+            <div class="sub_container_wrapper">
+                <h1>Confirm Your Payment</h1>
+                <div class="first-row">
+                    <div class="owner">
+                        <h3>Owner</h3>
+                        <div class="input-field">
+                            <input type="text" placeholder="User Name">
+                        </div>
+                    </div>
+                    <div class="cvv">
+                        <h3>CVV</h3>
+                        <div class="input-field">
+                            <input type="password" placeholder="CVV">
+                        </div>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="card-number">
+                        <h3>Card Number</h3>
+                        <div class="input-field">
+                            <input type="text" placeholder="#">
+                        </div>
+                    </div>
+                </div>
+                <div class="third-row">
+                    <h3>Card Number</h3>
+                    <div class="selection">
+                        <div class="date">
+                            <select name="months" id="months">
+                                <option value="Jan">Jan</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="Apr">Apr</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="Jul">Jul</option>
+                                <option value="Aug">Aug</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Oct">Oct</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dec</option>
+                            </select>
+                            <select name="years" id="years">
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                            </select>
+                        </div>
+                        <div class="cards">
+                            <img th:src="@{img/payment/mc.png}" alt="">
+                            <img th:src="@{img/payment/vi.png}" alt="">
+                            <img th:src="@{img/payment/pp.png}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button onclick="controlPayment()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function controlPayment(){
+            var payment = document.getElementById('payment');
+            if(payment.style.display === 'unset'){
+                payment.style.display = 'none';
+                alert("Payment success!")
+            }else{
+                payment.style.display = 'unset';
+            }
+        }
+        function buyCourseByUnit(){
+            const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
+            const lessonId = event.target.getAttribute('data-lessonid');
+            const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
+            const url =`${window.location.origin}/registerByUnit?userPhone=${userPhone}&courseId=${courseId}&lessonId=${lessonId}`;
+            const http = new XMLHttpRequest();
+            http.open("GET", url);
+            http.send();
+            controlPayment()
+        }
+        function buyCourse(){
+            const courseId = document.querySelector('.list-course-lesson').getAttribute('data-courseid');
+            const userPhone = document.querySelector('#userPhone').getAttribute('data-phone');
+            const url = `${window.location.origin}/register?userPhone=${userPhone}&courseId=${courseId}`;
+            const http = new XMLHttpRequest();
+            http.open("GET", url);
+            http.send();
+            controlPayment()
+        }
+    </script>
+</body>
+</html>
